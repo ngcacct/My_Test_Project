@@ -8,7 +8,8 @@ pipeline {
                             parameters: [choice(name: 'RESPONSE', choices: 'Yes\nNo', description: 'What is your response?')]
                 }
                 //echo "${response}"
-                    echo "Done"
+                //echo "Done"
+                echo "${choices}"
             }
         }
     }
