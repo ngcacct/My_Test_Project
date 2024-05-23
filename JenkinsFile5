@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage("Input Test") {
+            steps {
+                script {
+                    def response = input message: 'User input required', ok: 'Submit',
+                            parameters: [choice(name: 'YourResponse', choices: 'Yes\nNo', description: 'What is your response?')]
+                }
+                echo "${response}"
+            }
+        }
+    }
+}
