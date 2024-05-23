@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Howdie') {
+            steps {
+                script{
+                    def output=bat(returnStdout:true,script:'echo "Hello, This is just another test...."').trim()
+                    echo "Output:'${output}'"
+                }
+            }
+        }
+    }
+}
