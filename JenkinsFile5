@@ -9,7 +9,9 @@ pipeline {
                 }
                 //echo "${response}"
                 //echo "Done"
-                echo "$params.choices"            }
+                //echo "$params.choices" 
+                echo "$choices"
+            }
         }
     }
 }
