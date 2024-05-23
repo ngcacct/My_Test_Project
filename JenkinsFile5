@@ -1,13 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage("Input Test") {
+        stage("InputTest") {
             steps {
                 script {
                     def response = input message: 'User input required', ok: 'Submit',
-                            parameters: [choice(choices: 'Yes\nNo', description: 'What is your response?')]
+                            parameters: [choice(name: 'RESPONSE', choices: 'Yes\nNo', description: 'What is your response?')]
                 }
-                echo "${response}"
+                //echo "${response}"
+                    echo "Done"
             }
         }
     }
