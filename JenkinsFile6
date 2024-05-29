@@ -1,13 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage("Software Versions") {
+        stage('Software Versions') {
             steps {
                 script {
                     def response = input message: 'Print Software Versions?',
                             parameters: [choice(choices: 'Yes\nNo', 
                             description: 'Proceed or Abort?',
-                            name: "What to do?')]
+                            name: 'What to do?')]
 
                             if(response == 'Yes'){
                               bat 'mvn --version'
